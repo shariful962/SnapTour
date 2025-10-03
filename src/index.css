@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+  font-family: "Roboto", sans-serif;
+}
+
+@theme {
+  --color-Primary: #032C7B;
+  --color-textClr: #1D1B20;
+  --font-Inter: "Inter", sans-serif;
+}
+
+ .title {
+  @apply text-[22px] md:text-2xl lg:text-3xl font-bold leading-5.5
+ }
+.logout_btn {
+  @apply flex items-center bg-Primary text-white gap-2 w-full px-4 py-3 rounded-[16px] md:rounded-[24px] text-base lg:h-16;
+}
+
+.label-control {
+  @apply text-textClr font-medium text-base md:text-lg   leading-[100%];
+}
+
+.form-control {
+  @apply border border-[#C8C8C8]  h-[48px] md:h-13.5 pl-4 pr-10 py-2.5 px-3 rounded-[8px] w-full focus:outline-none;
+}
+
+.auth_btn {
+  @apply h-[48px] md:h-13.5 py-3 text-white text-base md:text-lg  rounded-[8px] font-bold;
+}
+.authTitle {
+  @apply text-[28px] md:text-2xl lg:text-[2rem] font-medium text-center text-textClr;
+}
+
