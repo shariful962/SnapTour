@@ -62,12 +62,9 @@ const ForgotPass = ({initialStep,initialEmail}) => {
       )}
       </div>
       {/* right content  */}
-      <div className="w-1/2 md:w-[55%] hidden lg:flex items-center justify-center bg-Primary h-screen">
-        <img
-          src={Icons.signinBg}
-          alt="Login side"
-          className="max-w-full max-h-full object-contain"
-        />
+     <div className="w-1/2 md:w-[55%] hidden lg:block h-screen bg-no-repeat bg-cover bg-top"
+  style={{ backgroundImage: `url(${Icons.signinBg})` }}>
+      
       </div>
     </div>
   )

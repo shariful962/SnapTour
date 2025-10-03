@@ -31,6 +31,6 @@
   @apply h-[48px] md:h-13.5 py-3 text-white text-base md:text-lg  rounded-[8px] font-bold;
 }
 .authTitle {
-  @apply text-[28px] md:text-2xl lg:text-[2rem] font-medium text-center text-textClr;
+  @apply text-[28px] md:text-2xl lg:text-[2rem] font-medium  text-textClr;
 }
 

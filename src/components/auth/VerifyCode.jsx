@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import React, { useRef, useState } from "react";
 
 const VerifyCode = ({ setOtp, email, onSubmit }) => {
@@ -81,11 +82,12 @@ const VerifyCode = ({ setOtp, email, onSubmit }) => {
   };
 
   return (
-    <div className="w-full md:max-w-[538px] font-Roboto px-4 flex flex-col">
+    <div className="flex items-center justify-center h-screen">
+      <div className="w-full md:max-w-[538px] font-Roboto px-4 flex flex-col">
       <form onSubmit={handleSubmit}>
-        <h3 className="text-left authTitle1">Check your email</h3>
-      <p className="text-base md:text-lg  leading-6 text-s mb-7.5">
-        We sent a reset link to <strong>{email} </strong>
+        <h3 className="text-left authTitle mb-5">Check your email</h3>
+      <p className="text-base md:text-lg  leading-6 text-[#C8C8C8] mb-6">
+        We sent a reset link to <strong className="text-black/50">{email} </strong>
         enter 6 digit code that mentioned in the email
       </p>
 
@@ -126,6 +128,7 @@ const VerifyCode = ({ setOtp, email, onSubmit }) => {
         </span>
       </p>
       </form>
+    </div>
     </div>
   );
 };

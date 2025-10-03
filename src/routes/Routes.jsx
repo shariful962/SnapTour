@@ -1,12 +1,13 @@
 import { createBrowserRouter, Navigate } from "react-router";
 import Layout from "../layout/Layout";
 import Signin from "../pages/auth/Signin";
-import Dashboard from "../pages/dashboard/Dashboard";
-import UserManagement from "../pages/userManagement/UserManagement";
 import Error from "../pages/error/Error";
 import ForgotPass from "../pages/auth/ForgotPass";
-import ManageCompetition from "../pages/manageCompetition/ManageCompetition";
-import UserFeedback from "../pages/userFeedback/UserFeedback";
+import Overview from "../pages/overview/Overview";
+import UserManagement from "../pages/user management/UserManagement";
+import BookingManagement from "../pages/booking management/BookingManagement";
+import PostManagement from "../pages/post management/PostManagement";
+import Settings from "../pages/setting & profile/Settings";
 
 export const router = createBrowserRouter([
   {
@@ -24,20 +25,13 @@ export const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Navigate to="/signin" replace /> },
-      { path: "dashboard", Component: Dashboard },
-      
-      {
-        path: "user_manage",
-        Component: UserManagement,
-      },
-      {
-        path: "manage_com",
-        Component: ManageCompetition
-      },
-      {
-        path: "/feedback",
-        Component: UserFeedback
-      }
+      { path: "overview", Component: Overview },
+      { path: "usermanage", Component: UserManagement },
+      { path: "booking", Component: BookingManagement },
+      { path: "post", Component: PostManagement },
+      { path: "profile", Component: Settings },
+
+
     ],
   },
 ]);

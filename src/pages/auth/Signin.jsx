@@ -24,7 +24,7 @@ const Signin = () => {
     e.preventDefault();
     if (!formData.email || !formData.password) return;
     console.log(formData);
-    setTimeout(() => navigate("/dashboard"), 1000);
+    setTimeout(() => navigate("/overview"), 1000);
   };
 
   return (
@@ -34,7 +34,7 @@ const Signin = () => {
         {/* form section area  */}
         <div className="w-full max-w-[538px] flex flex-col">
           <form onSubmit={handleSubmit} className="w-full">
-            <h1 className="authTitle mb-9">Sign in</h1>
+            <h1 className="authTitle text-center mb-9">Sign in</h1>
 
             {/* Email input */}
             <div className="flex flex-col w-full gap-2 mb-4 md:mb-5.5">

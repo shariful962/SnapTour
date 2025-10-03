@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import Icons from "../../assets/image";
-import { IoChevronDown } from "react-icons/io5";
+import { IoChevronDown, IoSettingsOutline } from "react-icons/io5";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useNavigate } from "react-router";
 import { CiEdit } from "react-icons/ci";
@@ -124,7 +124,7 @@ const Header = ({ setSidebarOpen }) => {
         {/* Right Side: Profile Info */}
         <div
 
-          className="ml-auto flex items-center gap-2 relative"
+          className="ml-auto flex items-center gap-4 relative"
         >
           <div
             ref={profileRef}
@@ -320,6 +320,10 @@ const Header = ({ setSidebarOpen }) => {
                 </motion.div>
               )}
             </AnimatePresence>
+          </div>
+          {/* settings  */}
+          <div>
+            <IoSettingsOutline size={28} className="cursor-pointer" />
           </div>
         </div>
       </div>

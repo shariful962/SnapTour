@@ -6,24 +6,23 @@ import { SiGoogleanalytics } from "react-icons/si";
 import { FaUserCog } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
 import { VscFeedback } from "react-icons/vsc";
-
-
-
-
+import { CiUser } from "react-icons/ci";
+import { IoBookOutline } from "react-icons/io5";
+import { MdPostAdd } from "react-icons/md";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const links = [
-    { name: "Data Analytics Dashboard", path: "/dashboard", ico: SiGoogleanalytics },
-    { name: "User management", path: "/user_manage", ico: FaUserCog },
-    { name: "Manage Competition", path: "/manage_com", ico: GoGoal },
-    { name: "User Feedback", path: "/feedback", ico: VscFeedback },
+    { name: "Overview", path: "/overview", ico: SiGoogleanalytics },
+    { name: "User Management", path: "/usermanage", ico: CiUser },
+    { name: "Booking Management", path: "/booking", ico: IoBookOutline },
+    { name: "Post Management", path: "/post", ico: MdPostAdd },
+    { name: "Setting & Profile", path: "/profile", ico: FaUserCog },
   ];
 
   const handleLogout = () => {
     // Example: clear token and redirect
-    navigate("/signin")
-    
+    navigate("/signin");
   };
 
   return (
@@ -31,34 +30,40 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       {/* Sidebar: Desktop */}
       <aside className="hidden md:flex flex-col w-[294px] h-full bg-white border-r border-gray-200 fixed top-0 left-0 z-40 ">
         {/* Logo Section */}
-        <button  className="cursor-pointer" onClick={()=>navigate("/dashboard")}>
-          <div className="mt-2 flex items-center gap-5 px-4 py-4">
-          <img src={Icons.navLogo} alt="Logo" className="w-auto h-[60px]" />
-        </div>
+        <button
+          className="cursor-pointer"
+          onClick={() => navigate("/overview")}
+        >
+          <div className="mt-4 ml-3 gap-5 px-4 py-4">
+            <img src={Icons.navLogo} alt="Logo" className="w-[150px] object-cover" />
+          </div>
         </button>
 
         {/* Navigation */}
-        <nav className="flex flex-col flex-grow p-4 space-y-2 text-base md:text-lg mt-0">
+        <nav className="flex flex-col flex-grow p-4 space-y-2 text-base md:text-lg mt-7">
           {links.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `px-4 py-3 mb-3 rounded-[20px] text-base h-12 flex items-center  ${
-                  isActive ? "bg-Primary text-white font-medium" : "hover:text-textClr"
+                `px-4 py-3 mb-3 rounded-[16px] text-base h-12 flex items-center  ${
+                  isActive
+                    ? "bg-Primary text-white font-medium"
+                    : "hover:text-textClr"
                 }`
               }
               end
             >
               <div className="flex items-center gap-x-4">
-                <p> <link.ico size={24} /></p>
+                <p>
+                  {" "}
+                  <link.ico size={24} />
+                </p>
                 <p>{link.name}</p>
               </div>
             </NavLink>
           ))}
         </nav>
-
-    
       </aside>
 
       {/* Sidebar: Mobile Drawer */}
@@ -73,10 +78,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-4">
+          <div className="mt-4 flex items-center justify-between px-4 py-4">
             <div className="flex items-center gap-3">
-              <img src={Icons.navLogo} alt="Logo" className="w-auto h-[60px]" />
-              
+              <img src={Icons.navLogo} alt="Logo" className="ml-3 w-[150px] object-cover" />
             </div>
             <div
               onClick={() => setIsOpen(false)}
@@ -87,7 +91,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
           </div>
 
           {/* Navigation */}
-          <nav className="p-4 space-y-2 flex-grow">
+          <nav className="p-4 space-y-2 flex-grow mt-7">
             {links.map((link) => (
               <NavLink
                 key={link.name}
@@ -95,28 +99,24 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-2xl text-base ${
-                    isActive ? "bg-Primary text-white font-medium" : "hover:text-textClr"
+                    isActive
+                      ? "bg-Primary text-white font-medium"
+                      : "hover:text-textClr"
                   }`
                 }
                 end
               >
                 <div className="flex items-center gap-x-3">
-                 <link.ico size={24} />
-                {link.name}
-              </div>
+                  <link.ico size={24} />
+                  {link.name}
+                </div>
               </NavLink>
             ))}
           </nav>
-
-          
-
-          
         </aside>
-        
       </div>
     </div>
   );
 };
 
 export default Sidebar;
-
